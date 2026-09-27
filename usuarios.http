@@ -1,0 +1,73 @@
+### Variável base da API
+@baseUrl = http://localhost:3000
+
+### 1. Cadastrar Novo Usuário (Paciente)
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Edson Silva",
+  "email": "edson.silva@email.com",
+  "senha": "senha123",
+  "tipo_usuario": "PROFISSIONAL",
+  "telefone": "81988887777"
+}
+### {
+#   "nome": "Maria Silva",
+#   "email": "maria.silva@email.com",
+#   "senha": "senha123",
+#   "tipo_usuario": "PACIENTE",
+#   "telefone": "11987654321"
+# }
+# {
+#   "nome": "Maria Silva",
+#   "email": "maria.silva@email.com",
+#   "senha": "senha123",
+#   "tipo_usuario": "PACIENTE",
+#   "telefone": "11987654321"
+### }
+
+### 2. Cadastrar Novo Usuário (Profissional)
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Dr. Carlos Alberto",
+  "email": "carlos.medico@email.com",
+  "senha": "senha123",
+  "tipo_usuario": "PROFISSIONAL",
+  "telefone": "11912345678"
+}
+
+
+
+### 3. Listar Todos os Usuários
+GET {{baseUrl}}/usuarios
+Content-Type: application/json
+
+
+
+
+### 4. Buscar Usuário por ID (Ex: ID 1)
+GET {{baseUrl}}/usuarios/1
+Content-Type: application/json
+
+
+
+
+### 5. Atualizar Dados de um Usuário (Ex: ID 1)
+PATCH {{baseUrl}}/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "Maria Silva de Souza",
+  "telefone": "11999998888"
+}
+
+
+
+
+
+### 6. Deletar Usuário (Ex: ID 2)
+DELETE {{baseUrl}}/usuarios/1
+Content-Type: application/json
