@@ -1,124 +1,115 @@
+# 🩺 API Backend — Saúde na Palma da Mão
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-blue" alt="Status do Projeto">
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=nestjs&logoColor=white" alt="NestJS">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Repositório oficial do **Back-end (API REST)** da aplicação **"Saúde na Palma da Mão"**, desenvolvido como artefato do Projeto Integrador do 3º período do curso de Análise e Desenvolvimento de Sistemas da **Faculdade Senac Pernambuco**.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+## 🎯 Sobre o Projeto
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+O projeto **"Saúde na Palma da Mão"** é uma plataforma digital voltada a mitigar barreiras de acesso e longas filas presenciais no atendimento médico. Esta API em **Nest.js** serve como o núcleo de integração Client-Server, oferecendo suporte robusto para gerenciamento de usuários, clínicas parceiras, profissionais de saúde (com foco inicial nas especialidades de **Ortopedia e Fisioterapia**) e o fluxo completo de agendamento de consultas para o público idoso e seus cuidadores.
 
-## Project setup
+---
 
-```bash
-$ npm install
-```
+## 🛠️ Tecnologias Utilizadas
 
-## Compile and run the project
+O ecossistema do back-end foi estruturado com ferramentas modernas de mercado para garantir escalabilidade, tipagem estrita e facilidade de deploy:
 
-```bash
-# development
-$ npm run start
+* **[Nest.js](https://nestjs.com/)** — Framework Node.js progressivo para a construção de aplicações server-side eficientes e escaláveis.
+* **[TypeScript](https://www.typescriptlang.org/)** — Superset JavaScript que adiciona tipagem estática ao código.
+* **[Docker](https://www.docker.com/)** — Conteinerização dos serviços e do banco de dados para total paridade de ambiente entre os desenvolvedores.
+* **API RESTful** — Padrão arquitetural para comunicação com o front-end em Angular e o futuro app em React Native, utilizando formato **JSON**.
 
-# watch mode
-$ npm run start:dev
+---
 
-# production mode
-$ npm run start:prod
-```
+## 👥 Equipe de Desenvolvimento
 
-## Run tests
+* Danilo Henrique
+* Edson Aguiar
+* Estevão Enoque
+* Evencio Neto
+* Igor Barbosa
+* José Paulo Coutinho
+* Mayara M. da Silva
 
-```bash
-# unit tests
-$ npm run test
+**Docente Responsável:** Prof. Dr. Geraldo Gomes da Cruz Júnior  
+**Professora de UX:** Profa. Ms. Samantha Pimentel  
 
-# e2e tests
-$ npm run test:e2e
+---
 
-# test coverage
-$ npm run test:cov
-```
+## 📋 Requisitos do Sistema (MVP - 1ª Entrega)
 
-## Deployment
+Conforme a Especificação de Requisitos de Software (SRS), esta API contempla os seguintes módulos principais:
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+1. **Autenticação e Usuários (RF-001, RF-002):** Cadastro seguro com criptografia de senha (`hash`) e controle de acesso baseado em perfis (Paciente, Profissional, Administrador).
+2. **Clínicas e Especialidades (RF-003, RF-004):** Gestão de clínicas parceiras e catálogo restrito a Ortopedia e Fisioterapia.
+3. **Profissionais de Saúde (RF-005):** Cadastro vinculado a conselhos profissionais (CRM/CREFITO) e clínicas.
+4. **Disponibilidade e Agendamentos (RF-006, RF-007, RF-008, RF-009):** Gestão de horários livres, efetivação de marcações e histórico/cancelamento de consultas.
+5. **Painel Administrativo (RF-010):** Área restrita para manutenção global dos cadastros.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+---
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+## ⚙️ Como Executar o Projeto Localmente
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Pré-requisitos
+Certifique-se de ter instalado em sua máquina:
+* [Node.js](https://nodejs.org/) (versão 18+ recomendada)
+* [Docker](https://www.docker.com/) e Docker Compose
+* Gerenciador de pacotes `npm` ou `yarn`
 
-## Observability
+### Passo a passo
 
-In production applications, observability is essential for understanding how your system behaves, detecting issues early, and maintaining reliable performance.
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/paulodccoutinho/backend-saude-na-palma-mao-api.git](https://github.com/paulodccoutinho/backend-saude-na-palma-mao-api.git)
+   cd backend-saude-na-palma-mao-api
 
-[NestJS Observe](https://observe.nestjs.com) automatically instruments your NestJS application, giving you deep visibility into your system with minimal setup:
+   Instale as dependências:
 
-- **Distributed tracing:** Follow requests across services and understand how they flow through your system.
-- **Waterfall analysis:** Visualize request execution and identify slow operations, bottlenecks, and unexpected delays.
-- **Performance analysis:** Analyze application performance in real time and quickly pinpoint areas that need optimization.
-- **Metrics:** Track key application and infrastructure metrics to understand system health and performance trends.
-- **Logging:** Centralize and correlate logs with traces and other telemetry to make debugging easier.
-- **Error tracking:** Detect errors quickly and investigate their root causes with the surrounding context.
-- **SLA monitoring:** Track service-level objectives and identify when your application is approaching or exceeding defined thresholds.
-- **Alarms and alerts:** Set up alerts for critical errors, performance degradation, SLA violations, and other anomalies so your team can react quickly.
+Bash
 
-To add it to this project:
 
-```bash
-$ npm install @nestjs/observe
-```
+npm install
+Configure as variáveis de ambiente:
+Crie um arquivo .env na raiz do projeto baseado no .env.example (ou configure as credenciais de conexão com o banco de dados via Docker).
 
-Then follow the [setup guide](https://docs.nestjs.com/observability/overview) - it takes a single import and an app key.
+Suba o ambiente conteinerizado (Banco de Dados / Infraestrutura):
 
-The free plan needs no payment details and covers 300,000 events a month. You can also browse the [live demo](https://www.observe-demo.nestjs.com/dashboard) first - the whole dashboard over a busy service's data, with nothing to install.
+Bash
 
-## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
+docker-compose up -d
+Execute a aplicação em modo de desenvolvimento:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Auto-instrument your application with [NestJS Observe](https://observe.nestjs.com). Distributed tracing, metrics, and logging made easy. Error tracking and performance monitoring for your NestJS applications.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Bash
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+npm run start:dev
+A API estará rodando por padrão na porta configurada (geralmente http://localhost:3000).
 
-## Stay in touch
+🧪 Executando Testes
+Bash
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
+# Testes unitários
+npm run test
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+# Testes e2e (end-to-end)
+npm run test:e2e
+
+# Cobertura de testes
+npm run test:cov
+📅 Cronograma de Entregas (Acadêmico)
+1ª Entrega (14/10/2026): MVP Web (Front-end em Angular + API Nest.js + Banco de Dados conteinerizado via Docker)[cite: 6].
+
+2ª Entrega (09/12/2026): Aplicação Mobile (React Native) integrada com Inteligência Artificial para pré-triagem[cite: 6].
+
+📄 Licença
+Este projeto é desenvolvido para fins acadêmicos no âmbito da Faculdade Senac Pernambuco.
